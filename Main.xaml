@@ -107,7 +107,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="865.6000000000001,1915.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="876.0000000000001,2089.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="filesArr" />
       <Variable x:TypeArguments="s:String[]" Name="filesExtensionArr" />
@@ -118,21 +118,26 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="1. Bot will access a folder path. (C:\Users\rayab\OneDrive_Documents\ADD_Batch_02_Files\Excel_Automation_Files\Daily Reports_Coffee_Shop_Data)&#xD;&#xA;2. Bot picks all the files present in the folder. &#xD;&#xA;(filesArr = Directory.Getfiles(C:\Users\rayab\&#xD;&#xA;OneDrive_Documents\&#xD;&#xA;ADD_Batch_02_Files\&#xD;&#xA;Excel_Automation_Files\Daily Reports_Coffee_Shop_Data))&#xD;&#xA;3. if filesArr.count&gt;0:&#xD;&#xA;              Then:&#xD;&#xA;                  proceed further&#xD;&#xA;               Else:&#xD;&#xA;                            End the process" DisplayName="Sequence: validating files in a folder" sap:VirtualizedContainerService.HintSize="668.8,1892" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence sap2010:Annotation.AnnotationText="1. Bot will access a folder path. (C:\Users\rayab\OneDrive_Documents\ADD_Batch_02_Files\Excel_Automation_Files\Daily Reports_Coffee_Shop_Data)&#xA;2. Bot picks all the files present in the folder. &#xA;(filesArr = Directory.Getfiles(C:\Users\rayab\&#xA;OneDrive_Documents\&#xA;ADD_Batch_02_Files\&#xA;Excel_Automation_Files\Daily Reports_Coffee_Shop_Data))&#xA;3. if filesArr.count&gt;0:&#xA;              Then:&#xA;                  proceed further&#xA;               Else:&#xA;                            End the process" DisplayName="Sequence: validating files in a folder" sap:VirtualizedContainerService.HintSize="636.8,2066.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="635.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="603.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
             <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"Bot is going to access the folder."</CSharpValue>
           </InArgument>
         </ui:LogMessage.Message>
       </ui:LogMessage>
-      <Assign DisplayName="Assign: Get all files from the folder" sap:VirtualizedContainerService.HintSize="635.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Version_Control_Test - Invoke Workflow File (Version_Control_Test.xaml)" sap:VirtualizedContainerService.HintSize="603.2,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Version_Control_Test.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Assign DisplayName="Assign: Get all files from the folder" sap:VirtualizedContainerService.HintSize="603.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">
             <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">filesArr</CSharpReference>
@@ -144,14 +149,14 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="635.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="603.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
             <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">"Count for the files collection: "+filesArr.Length</CSharpValue>
           </InArgument>
         </ui:LogMessage.Message>
       </ui:LogMessage>
-      <If DisplayName="If: filesArr length is greater than 0 or not" sap:VirtualizedContainerService.HintSize="635.2,1142.4" sap2010:WorkflowViewState.IdRef="If_1">
+      <If DisplayName="If: filesArr length is greater than 0 or not" sap:VirtualizedContainerService.HintSize="603.2,1110.4" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Condition>
           <InArgument x:TypeArguments="x:Boolean">
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">filesArr.Length&gt;0</CSharpValue>
